@@ -1,0 +1,33 @@
+{
+  "name": "FR24 Improved",
+  "description": "Improve your FlightRadar24 web experience",
+  "version": "1.0",
+  "manifest_version": 3,
+
+  "icons": {
+    "48": "./images/icon-48.png",
+    "128": "./images/icon-128.png"
+  },
+
+  "action": {
+    "default_popup": "./popup/main.html",
+    "default_icon": "./images/icon-128.png"
+  },
+
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "storage",
+    "clipboardWrite"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.flightradar24.com/*",
+        "https://*.fr24.com/*"
+      ],
+      "js": ["./scripts/removeDOM.js"]
+    }
+  ]
+}
